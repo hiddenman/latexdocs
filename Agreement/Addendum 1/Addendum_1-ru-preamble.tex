@@ -1,0 +1,249 @@
+\documentclass[pdftex,a4paper,10pt,oneside]{scrartcl}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+\usepackage{cmap} % чтобы работал поиск по PDF
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%\usepackage{lastpage}
+
+% our vars
+\def\ipxpname{IPXP Europe s.r.o.}
+\def\ipxpaddress{Bubenec, Ceskoslovenske armady 371/11, PSC 160 00, Prague 6, Czech Republic}
+
+% do not enlarge space after punctuation marks
+\frenchspacing
+% make bold font better
+\renewcommand{\bfdefault}{b}
+% we can hyphen and left two symbols in Russian
+\righthyphenmin=2
+
+% use cm-super
+%\renewcommand{\rmdefault}{cmr}
+%\renewcommand{\sfdefault}{cmss}
+%\renewcommand{\ttdefault}{cmtt}
+
+% use pscyr
+\usepackage{pscyr}
+%\renewcommand{\rmdefault}{fjn}
+%\renewcommand{\sfdefault}{fma}
+%\renewcommand{\ttdefault}{fcr}
+\renewcommand{\rmdefault}{ftm}
+\renewcommand{\sfdefault}{far}
+\renewcommand{\ttdefault}{fcr}
+% font for PDF forms
+%\renewcommand*{\familydefault}{cmr}
+%\renewcommand*{\familydefault}{fjn}
+\renewcommand*{\familydefault}{ftm}
+
+% titlesec etc.
+\usepackage[bf,small,compact]{titlesec}
+\usepackage{indentfirst} % first paragraph indent
+% format of section: X.
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{%
+   \csname the#1\endcsname.\;
+}
+% dot at the TOC
+\renewcommand\numberline[1]{\hb@xt@\@tempdima{#1.\hfil}}
+\makeatother
+
+\lccode`\-=`\-
+\defaulthyphenchar=127
+
+
+\usepackage[english,russian]{babel}
+% for date formatting
+\usepackage{datetime}
+\renewcommand{\timeseparator}{:}
+\renewcommand{\dateseparator}{.}
+% end datetime
+\usepackage{url} % urling
+\usepackage{fancyhdr} % управление колонтитулами
+\usepackage{amssymb} % математические символы. пригодятся в пакете ntheorem
+\usepackage{amsmath} % математические символы. пригодятся в пакете ntheorem
+\usepackage[amsthm,amsmath,thmmarks,hyperref]{ntheorem} % поддержка точек после номера теорем
+\usepackage[warn]{mathtext}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\usepackage{ccaption} % подписи к рисункам с точкой и пр.
+\usepackage{color}
+\usepackage{makeidx}
+\usepackage{xspace}
+\usepackage{wasysym}
+\usepackage{enumerate}
+\usepackage{enumitem}    % Enhancing the list environments
+\usepackage{underscore}
+\usepackage{bigstrut}
+
+\usepackage{calc}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\pdfcompresslevel=9 % сжимать PDF
+
+
+\newcommand{\bs}{\symbol{'134}}
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+\deffootnote[2.5em]{1.5em}{1em}{\textsuperscript{\thefootnotemark}}
+
+
+
+
+\addto\captionsrussian{\def\contentsname{\textbf{Оглавление.}}}
+\addto\captionsrussian{\def\refname{\textbf{Литература.}}}
+                        % Наклонные русские буквы в формулах при установленном
+                        % пакете pscyr
+                        % подпись к рисунку в виде цифры с точкой (и пробелом!),
+                        % а не сдвоеточием требует пакета ccaption
+
+\captiondelim{. }
+                        % Добавить это перед begin{thebibliography} для
+                        % нумерации списка литературы в виде цифры с точкой
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+                        % определение теорем, необходим пакет ntheorem
+\newtheorem{theo}{Теорема}
+                        % Конец преамбулы
+
+% enumerate style
+
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\labelenumi{\theenumi.}
+\renewcommand\theenumii{\arabic{enumii}}
+\renewcommand\labelenumii{\theenumi.\theenumii.}
+\renewcommand\theenumiii{\arabic{enumiii}}
+\renewcommand\labelenumiii{\labelenumii\theenumiii.}
+\renewcommand\theenumiv{\arabic{enumiv}}
+\renewcommand\labelenumiv{\labelenumiii\theenumiv.}
+
+\makeatletter \renewcommand\p@enumii{\theenumi.} \makeatother
+
+\clubpenalty=1000
+\widowpenalty=1000
+\tolerance=300
+
+% bullets
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\cdot$}
+\renewcommand{\labelitemiii}{$\diamond$}
+\renewcommand{\labelitemiv}{$\ast$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fancyhdr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newsavebox{\ipxplogo}
+\savebox{\ipxplogo}{ \includegraphics[keepaspectratio]{logo-ipxp}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\lhead{}
+\chead{\thepage}
+\rhead{\textbf{Дополнительное соглашение \No~1}}
+
+\cfoot{\usebox{\ipxplogo}}
+\lfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=ipxpname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1},value=\ipxpname,readonly=true]{}}}
+\rfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=clntname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1}]{}}}
+
+% for the first page
+\fancypagestyle{addendum}{%
+\fancyhf{} % clear all header and footer fields
+\chead{\thepage}
+\rhead{\textbf{Дополнительное соглашение \No~1}}
+\lfoot{}
+\lfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=ipxpname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1},value=\ipxpname,readonly=true]{}}}
+\cfoot{\usebox{\ipxplogo}}
+\rfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=clntname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1}]{}}}
+}
+
+% for the first page
+\fancypagestyle{addendum-noheader}{%
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0.0pt}
+\lfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=ipxpname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1},value=\ipxpname,readonly=true]{}}}
+\cfoot{\usebox{\ipxplogo}}
+\rfoot{\parbox{5cm}{\rule{5cm}{0.4pt}\\ \TextField[name=clntname,charsize=10pt,width=5cm,height=1em,align=1,borderwidth=0,bordercolor={1 1 1}]{}}}
+}
+
+\fancypagestyle{addendum-nofooter}{%
+\fancyhf{} % clear all header and footer fields
+\cfoot{\usebox{\ipxplogo}}
+}
+
+\fancypagestyle{addendum-noheader-nofooter}{%
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0.0pt}
+\cfoot{\usebox{\ipxplogo}}
+}
+
+
+% end fancdyhdr
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% special macro for underscores
+%\def\rp{\raisebox{-1pt}{\rule{1cm}{.4pt}}\hspace{0pt}}
+\def\rp{\raisebox{0pt}{\rule{0.5cm}{.4pt}}\penalty100}
+
+% The last one
+\usepackage[pdftex,a4paper,final,bookmarks=true,bookmarksopen,bookmarksnumbered,plainpages=false,colorlinks=false, unicode, pdfstartview=FitH]{hyperref}
+\input{Addendum_1-ru-preamble-pdfsetup-old}
+% JavaScript
+\usepackage[pdftex]{insdljs}
+
+\begin{insDLJS}[docOpen]{addendumru}{JavaScript}
+function docOpen()
+{
+
+   this.getField("contractdate").textFont = font.Times;
+   this.getField("contractdate").userName = "Enter contract date";
+
+   this.getField("contractnum").textFont = font.Times;
+   this.getField("contractnum").userName = "Enter contract number";
+
+   this.getField("clntname").textFont = font.TimesB;
+   this.getField("clntname").userName = "Enter company name";
+   
+   this.getField("clntdirname").textFont = font.TimesI;
+   this.getField("clntdirname").userName = "Enter director name";
+
+   this.getField("clntcountry").textFont = font.TimesI;
+   this.getField("clntcountry").userName = "Enter country name";
+
+   this.getField("clntregnum").textFont = font.TimesI;
+   this.getField("clntregnum").userName = "Enter registration number";
+   
+   this.getField("clntlegaladdr").textFont = font.TimesI;
+   this.getField("clntlegaladdr").userName = "Enter legal address";
+
+   this.getField("clntlegaladdrnext").textFont = font.TimesI;
+   this.getField("clntlegaladdrnext").userName = "Enter legal address";
+   
+   this.getField("clntattorneyprintname").textFont = font.TimesI;
+   this.getField("clntattorneyprintname").userName = "Enter attorney print name";
+
+   this.getField("clntattorneyposition").textFont = font.TimesI;
+   this.getField("clntattorneyposition").userName = "Enter attorney position";
+
+
+
+}
+\end{insDLJS}
+\OpenAction{/S /JavaScript /JS (docOpen();)}
+
+
+\def\tfnextlinewidth{145mm}
+\def\tfnextlinewidthtwo{139mm}
+\def\tfnextlinewidththree{167mm}
+\newlength{\fieldlength}
+\newcommand{\MyTextField}[2]{
+  \setlength{\fieldlength}{\linewidth-\widthof{#1}-3mm}
+  #1 #2
+}

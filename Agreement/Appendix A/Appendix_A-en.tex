@@ -1,0 +1,308 @@
+\input{Appendix_A-en-preamble}
+\begin{document}
+\begin{Form}
+\appendix
+\selectlanguage{english}
+
+
+  \begin{raggedleft}
+    \hfill\parbox{5.8cm}{
+    \textbf{APPENDIX~A}\\
+    to  VoIP telecommunications\\
+    services agreement\\
+    dated \underline{\TextField[name=contractdate,charsize=10pt,width=5em,height=1em,borderwidth=0,
+    bordercolor={1 1 1},align=0]{}}~\textnumero~\underline{\TextField[name=contractnum,charsize=10pt,width=6em,
+    height=1em,borderwidth=0,bordercolor={1 1 1},align=0]{}}
+    }
+  \end{raggedleft}
+
+  \vskip 2\baselineskip
+
+  \begin{center}
+   \textbf{\Large{Pricing and Notices}}\label{anx:a-en}
+  \end{center}
+
+  \textbf{Supplier }is a company that receives traffic. \textbf{Client
+  }is a company that sends traffic. Supplier and Client are collectively
+  referred to as \textbf{Parties}.   
+
+  \section{General issues}
+
+   \begin{enumerate}[label=\thesection.\arabic*.]
+    \item Parties agree that each holds an exclusive right to set rates and
+      that rate formation is independent from and may differ from the market
+      pricing policy.
+    \item Any Party has the right to initiate rate or codes modification by
+      sending a written notification to the other Party (hereinafter \flqq{}\textbf{Rate
+      Notification}\frqq{}). 
+    \item In case of rate changes for services provided by the Parties as well
+      as changes in the list of services the Parties agree to send relevant
+      notifications to the following e-mails:
+      
+      \begin{itemize}
+      \item for \textbf{\ipxpname}: \href{mailto:rates@ipxp.net}{\textbf{rates@ipxp.net}}
+      \item for \underline{\TextField[name=clntname,charsize=10pt,width=19em,height=1em,borderwidth=0,bordercolor={1 1 1}]{}}:
+              \underline{\TextField[name=clntratesemail,charsize=10pt,width=76mm,height=1em,borderwidth=0,
+              bordercolor={1 1 1}]{}}
+              \\[\medskipamount]
+              \underline{\TextField[name=clntratesemailnext,charsize=10pt,width=151mm,height=1em,borderwidth=0,
+              bordercolor={1 1 1}]{}}                          
+      \end{itemize}
+
+    \end{enumerate}
+
+  \section{Notification contents}
+    
+   \begin{enumerate}[label=\thesection.\arabic*.]
+    \item In case of any route rate changes the Supplier is obliged to clearly
+      indicate the exact alteration of codes in the notification, such as:
+    
+      \begin{itemize}
+      \item Code;
+      \item Route name;
+      \item Rate per minute;
+      \item Increment (1/1~--- 1 second increments, 60/60~--- sixty second increments
+        or other)~--- for each code individually or all codes in total;
+      \item Status (rate increase; rate decrease; elimination from the price list
+        of a code or subcode specified in the previous notices; introduction
+        of a new code or subcode to the price list; rate without change; blocked
+        code);
+      \item Effective date~--- for each code individually or all codes in total;
+      \item Status of the before provided subcodes of this code (if they are subject
+        to changes).
+      \end{itemize}
+      
+
+      Each code must be written in a separate table cell of an attached file
+      created in Comma Separated Values (CSV), Microsoft Excel (XLS) or
+      OpenDocument Spreadsheet (ODS) format. CSV is preferred one due to limited
+      number of rows (65536) and columns (256) in each sheet of other formats.
+
+    \item  \label{enu:2.2-en}The rate for the specific route should correlates with its
+      appropriate code only.
+      The route name is given for information purposes only. 
+    \item The traffic is routed to all the codes and subcodes provided by the
+      Supplier.
+      In this case the traffic is routed to the longest subcode provided by the
+      Supplier for this destination. \textit{For example, if the rate for code 234806
+      is 0.13~USD, and for code 23480 is 0.09~USD, the call on number
+      234806121212 will be billed at 0.13~USD.
+      On all other codes beginning with code 23480{*}~--- at 0.09~USD}.
+    \item Traffic to longer subcodes beginning with the basic code which are
+      not specified in the price list, will be routed to the basic code.
+      \textit{For example, if the Supplier provided the code 1, but did not
+      prescribe separately the code of Dominican Republic (1809), the call on
+      number 1809121212 will be billed at the rate indicated for the
+      basic code 1}. Such longer codes must be either blocked for
+      traffic reception or specified separately together with an indication of
+      their rates or status \textbf{\flqq{}block\frqq{}}.
+    \item If the Supplier provides a new fix\-ed-li\-ne country code
+      (hereinafter~--- \textbf{\flqq{}PSTN\frqq{}}) (\textit{for example,
+      380}), he is \textbf{obliged} to specify the status of mobile and
+      co\-un\-try-ci\-ty codes in the same notice, unless their rates are not
+      different (higher or lower) from the PSTN rate. If the rates for mobile
+      codes  (\textit{38067, 38050 etc.}) are not indicated separately
+      in the price list, all the traffic there will be billed at the rate of
+      PSTN, because the Supplier's notifications do not specify other cases. 
+    \item If the Supplier provides a code with certain non-op\-er\-at\-ing subcodes
+      he must clearly indicate such subcodes as blocked ones. The Client should 
+      block these subcodes on his side and should not route traffic there. 
+    \item Any traffic sent to a destination without a rate indication in the
+      current price list will be subject to a lump-ra\-te of \textbf{10 (ten) U.S.~dollars/min}.
+    \item To avoid any possibility of misunderstanding and misinterpretaton of
+      the Rate Notification the Supplier is obliged to restate in the Rate
+      Notification all the previously provided codes for the relevant country
+      along with their status indication (increase, decrease, current, etc.).
+      In case the notifying Party does not restate the subcodes' status they
+      shall be charged at the rates quoted in previous rate notifications. 
+    \item Shorter (basic) codes, no matter their rate is higher or lower than
+      for subcodes, \textbf{do not substitute} the action of subcodes which continue to
+      operate unless otherwise stated in a special notice by the Supplier. 
+      \textit{For example, if the Supplier sends code 79 at 0.06~USD, and
+      earlier he opened subcode 7903 at 0.04~USD, traffic on number
+      7903797979 will be billed at 0.04~USD, because there was
+      no notification from the Supplier about deleting of this subcode,
+      rate increase or its integration into a shorter (basic) code}.
+    \item If the Supplier implies that the shorter code substitutes the 
+      effect of all longer subcodes provided eariler, he \textbf{must} specify it
+      clearly in the Notice to avoid double meaning: 
+      \begin{itemize}
+      \item by providing a list of subcodes which are subject to deletion and indicating the \textbf{\flqq{}delete\frqq{}} status;
+      \item or by indicating in the letter body that from the moment the Notice
+        enters into force all subcodes will be billed at the rate of the basic
+        code (see paragraph \ref{enu:2.11-en})
+      \end{itemize}
+      In case the status of subcodes is not specified the basic code is
+      downloaded, but the subcodes are not deleted and thus billed on the basis
+      of before indicated rates.
+    \item  \label{enu:2.11-en}In case of full replacement of the price list the Supplier must
+      indicate in the \textbf{letter body} that current notification will \textbf{completely
+      replace} the rates for either all destinations offered before or a certain
+      destination within the country dialing code (\textit{for example, Uzbekistan 998}).
+      Example of such notice: 
+    \begin{quote}
+      \begin{center}
+        \texttt{Dear Colleagues,}
+      \end{center}
+      \begin{flushleft}
+        \texttt{Officially we inform you about the change of rates and codes on traffic
+        termination from September, 1, 2009.\\
+        Please, pay attention that traffic termination will be accepted \textbf{only to
+        the pointed in this notification codes} and rates for the destination of
+        Uzbekistan (998).\\
+        Previous rates and codes to these destinations should be \textbf{considered
+        invalid}.}\\
+    \end{flushleft}
+  \end{quote}
+  
+    Notification about complete replacement of rates for a certain destination
+    without specifying its code is considered invalid according to Paragraph \ref{enu:2.2-en}
+    of the present Appendix. 
+
+  \item If a certain subcode becomes non-op\-er\-at\-ion\-al and is to be removed from
+    the price list, the Supplier can choose between 2 options: 
+    \begin{itemize}
+    \item to send a Notice about rate increase for this subcode to the basic code rate; 
+    \item or to send a Notice about closing of this subcode and its integration into a
+    basic code (and also increase of the rate to the basic code rate). 
+    \end{itemize}
+
+  \item If the Supplier sends codes with \textbf{\flqq{}no change\frqq{}} status,
+    the rates for these codes remain unchanged in the Client's billing system. 
+    Therefore, the Supplier takes responsibility to ensure that the rates for
+    these codes correspond with the rates sent earlier.
+
+  \item The Supplier agrees that the Client \textbf{is not} responsible for errors in
+    the Supplier's notifications or billing system. If the Supplier sent 
+    incorrect rates and did not send clarification before the new date came
+    into effect, the rates are considered valid and accepted and therefore
+    are not subject to dispute or recount.
+    \textit{For example, if the Supplier sent a rate for code 1 equal to
+    0.01~USD without specifying prices for subcodes 1809, 1767
+    (Dominican Republic) in the price list, but accepted traffic to these subcodes,
+    he can not demand a rate recount since he did not indicate these subcodes in
+    the price list as separate}.
+   \item The Client agrees that the Supplier \textbf{is not} responsible for the errors
+    in rates and codes uploading into the Client's billing system.
+  \item In case the error in the Supplier's notification gives the possibility
+    of double interpretaion and misuse, the Client should ask the Supplier
+    for \textbf{clarification and additional instructions}.
+
+  \end{enumerate}
+
+
+\section{Effective dates}
+
+  \begin{enumerate}[label=\thesection.\arabic*.]
+  \item The Parties agree that rate notifications will come into effect and invoices will be generated in the following time zones:
+      \begin{itemize}
+        \item from \textbf{\ipxpname}: \textbf{GMT+0} (summer time: \textbf{GMT+1})
+        \item \MyTextField{from}
+                {\underline{\TextField[name=clntname,charsize=10pt,width=22em,height=1em,borderwidth=0, bordercolor={1 1 1}, default=Company name]{}}:}
+                 \textbf{GMT}\underline{\TextField[name=clntgmt,charsize=10pt,width=3em,maxlen=3,height=1em,borderwidth=0,bordercolor={1 1 1}]{}}
+         (summer time: \textbf{GMT}\underline{\TextField[name=clntgmtsummer,charsize=10pt,width=3em,maxlen=3,height=1em,borderwidth=0,bordercolor={1 1 1}]{}})
+      \end{itemize}
+  \item Increases become effective no earlier than \textbf{7 (seven) days} from the moment of notification of the Client.
+  \item Decreases become effective immediately from the moment of notifying the Client.
+  \item Code deleting becomes effective no earlier than \textbf{7 (seven) days} from the moment of notification of the Client.
+  \item New codes, if they involve rate increase (\textit{for example, a new code 7954
+    at the rate 0.580~USD is separated from code 79 Russia mobile at the rate 0.050~USD}),
+    become effective no earlier than \textbf{7~days} from the moment of notification of the Client.
+    If new codes do not involve any rate increase, they become effective from the moment of notification of the Client.
+  \item A complete replacement of the price list or rates for a particular destination
+        becomes effective no earlier than \textbf{7 (seven) days} from the moment of notification of the Client.
+        A notification, marked as a full price list or rates replacement for a particular
+        destination must have a single effective date.
+  \item If the Supplier notifies the Client about changes due to become effective in
+        \textbf{7 (seven) days}, and afterwards is willing to change rates for the same codes within
+        the mentioned period of \textbf{7 (seven) days}, the Supplier shall indicate which rate shall
+        be considered valid after the \textbf{7 (seven) days} notification period. \textit{For example,
+        the Supplier increased the rate for code 9989 from 0.060~USD
+        to 0.063~USD and the change is due to become effective on April 21.
+        Afterwards he decreased the rate for code 9989 from 0.060~USD to 0.058~USD
+        effective on April 19. In this case the Supplier must indicate which rate will be considered
+        valid after April 21}.
+        If the Supplier fails to provide such information, the lower rate will remain in effect
+  \item In case the Customer agrees to accept the Notice about removing a subcode or increasing its
+        rate or a full price list replacement earlier than in \textbf{7 (seven) days}, the Supplier upon the receipt
+        of a written confirmation from the Customer's manager has a right to send a notice with the
+        corresponding changes.
+  \item In cases when rate or code changes should become effective no earlier than \textbf{7 (seven) days}
+       from the moment of notification of the Client, the day when the rate notification is sent
+        by the Supplier is considered the first day of the notification period.
+  \item In case all aforesaid terms of effectiveness as well as conditions of Section \ref{sec:confirmation-en}
+        of the present Appendix (\flqq{}\nameref{sec:confirmation-en}\frqq{}) are observed by the Supplier,
+        the rates are not subject to dispute after the date they come into force.
+  \end{enumerate}
+
+
+  \section{Confirmation of rate notifications} \label{sec:confirmation-en}
+    \begin{enumerate}[label=\thesection.\arabic*.]
+      \item The Rate Notification receipt must be confirmed by the receiving Party.
+           Otherwise the notifying Party is obliged to continue sending the Rate Notification
+           until such confirmation is received.
+      \item The notifying Party is obliged to ensure that the receiving Party receives and confirms
+           the receipt of the Rate Notification
+      \item If the Client failed to provide confirmation of the Rate Notification receipt before
+            the effective date, codes with increased rates and new codes must be blocked until
+            the Client confirms the receipt.
+      \item In case of rate discrepancies whereas the Supplier did not receive the relevant
+            confirmation from the Client the discrepancy is deemed as occurred on the Supplier
+            fault and is not subject to dispute.
+      \item The codes with a rate decrease come into force regardless of the fact whether
+            the Rate Notification confirmation was received or not.
+      \item In case of confirmation of rate notification by the Client these rates are not
+            subject to dispute after the date they come into force.
+    \end{enumerate}
+    
+  \section{Technical prefixes and tariff plans}
+
+  \begin{enumerate}[label=\thesection.\arabic*.]
+     \item If Supplier provides different tariff plans which differ by technical
+          prefix (\textit{for example, standard price list with prefix \#11 and premium
+          price list with prefix 0647}), Supplier \textbf{must} specify the
+          technical prefix in each rate notification. Otherwise the price list will
+          not be accepted for any tariff plan and notification will be considered invalid.
+      \item Notifications where technical prefix is not specified will be accepted as the
+            \flqq{}no prefix\frqq{} tariff plan, unless the use of a certain default prefix
+            is provided by the Supplier in the agreement or technical form.
+    \end{enumerate}
+
+  \section{International numbering plan change}
+    \begin{enumerate}[label=\thesection.\arabic*.]
+     \item When international dialing codes are changed (\textit{for example, Kazakhstan co\-un\-try-co\-de is
+           changed from 73 to 77}), the Supplier must send a notification indicating
+           the closure of old codes and introduction of new ones. Otherwise no default change will
+           be performed in the Client's billing system.
+    \end{enumerate}
+
+\thispagestyle{appendix-nofooter}
+
+\noindent
+\dotfill
+\noindent
+\vfill
+\noindent
+\parbox[t]{0.5\linewidth}{
+Company: \hfill\textbf{\ipxpname}\hspace*{0.5cm}\\
+Print name:\hfill\textit{Volodymyr Dinkevych}\hspace*{0.5cm}\\
+Position:\hfill\textit{Director}\hspace*{0.5cm}\\
+Signature: \hrulefill\hspace*{0.5cm}\\
+Date: \hrulefill\hspace*{0.5cm}\\
+}
+\hfill
+\parbox[t]{0.5\linewidth}{
+\hspace*{0.5cm}Company: \TextField[name=clntname,charsize=10pt,width=63mm,height=1em,align=2,borderwidth=0,bordercolor={1 1 1}]{}\\
+\hspace*{0.5cm}Print name: \TextField[bordersep=1,name=clntattorneyprintname,charsize=10pt,width=61mm,height=1em,align=2,borderwidth=0,bordercolor={1 1 1}]{}\\
+\hspace*{0.5cm}Position: \TextField[name=clntattorneyposition,charsize=10pt,width=65mm,height=1em,align=2,borderwidth=0,bordercolor={1 1 1}]{}\\
+\hspace*{0.5cm}Signature: \hrulefill\\
+\hspace*{0.5cm}Date: \hrulefill\\
+}
+
+
+
+\end{Form}
+\end{document}
+
+
+
